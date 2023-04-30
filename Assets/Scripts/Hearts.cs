@@ -3,39 +3,31 @@ using UnityEngine.SceneManagement;
 
 public class Hearts : MonoBehaviour
 {
-    public int vidas = 1;
-    public int vecesPaso = 0;
+    public int vidas = 3;
+    public GameObject puntoInicioGO;
     private Vector3 puntoInicio;
-    public GameObject startPoint;
 
     private void Start()
     {
-        puntoInicio = new Vector3(0, 0, 0);
+        puntoInicio = puntoInicioGO.transform.position;
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Trigger"))
         {
-            vecesPaso++;
+            vidas--;
 
-            if (vecesPaso >= 3)
+            if (vidas <= 0)
             {
-                vidas--;
+                transform.position = puntoInicio;
+                vidas = 3;
 
-                if (vidas <= 0)
-                {
-                    transform.position = puntoInicio;
-                    vidas = 1;
-
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                }
-                else
-                {
-                    transform.position = puntoInicio;
-                }
-
-                vecesPaso = 0;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            else
+            {
+                transform.position = puntoInicio;
             }
         }
     }
