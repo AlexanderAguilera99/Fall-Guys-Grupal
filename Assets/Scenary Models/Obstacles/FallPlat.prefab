@@ -110,4 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0ee86a322726f42853351f23363550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallTime: 1.5
+  fallTime: 0.8
+  respawnTime: 2
+  respawnPrefab: {fileID: 7363632408087156004}
