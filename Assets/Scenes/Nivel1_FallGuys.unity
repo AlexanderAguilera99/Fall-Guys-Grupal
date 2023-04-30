@@ -588,6 +588,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4274868087642060, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
   m_PrefabInstance: {fileID: 1282102041}
   m_PrefabAsset: {fileID: 0}
+--- !u!81 &849373312
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476729642}
+  m_Enabled: 1
 --- !u!1001 &911246470
 PrefabInstance:
   m_ObjectHideFlags: 0
