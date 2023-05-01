@@ -10,6 +10,7 @@ public class Death : MonoBehaviour {
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.CompareTag("Player")) {
             currentCount++;
+            GameManager.Instance.PerderVida();
             //con esta linea cargo desde el punto de chequeo
             //col.gameObject.GetComponent<CharacterControls>().checkPoint = checkPoint.position;
             //col.gameObject.GetComponent<CharacterControls>().LoadCheckPoint();
