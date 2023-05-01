@@ -17,10 +17,14 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     [SerializeField] private float m_moveSpeed = 2;
     [SerializeField] private float m_turnSpeed = 200;
+
     [SerializeField] private float m_jumpForce = 4;
 
     [SerializeField] private Animator m_animator = null;
     [SerializeField] private Rigidbody m_rigidBody = null;
+
+  //  [SerializeField] private int _nJumps = 1;
+   // private int _nJumpsValue;
 
     [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
@@ -40,6 +44,9 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private bool m_jumpInput = false;
 
     private bool m_isGrounded;
+    private bool canDoubleJump;
+
+
 
     private List<Collider> m_collisions = new List<Collider>();
 
@@ -106,9 +113,28 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void Update()
     {
-        if (!m_jumpInput && Input.GetKey(KeyCode.Space))
+        // primero se pregunta si el player esta en el piso, si lo esta entonces se puede dar un doble salto
+        if (m_isGrounded)
         {
-            m_jumpInput = true;
+            canDoubleJump = true;
+        }
+        // el siguiente if implementa el doble salto al presionar el boton dos veces
+        if (Input.GetButtonDown("Jump"))
+        {
+            // primero se chequea que si esta en el piso entonces pueda saltar al presionar la barra espaciadora
+            if (m_isGrounded)
+            {
+                m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            }
+            else
+            {
+                // si no esta en el piso se pregunta si se puede dar doble salto y se lo ejecutra
+                if (canDoubleJump)
+                {
+                    m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+                    canDoubleJump = false;
+                }
+            }
         }
     }
 
@@ -160,7 +186,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
         m_animator.SetFloat("MoveSpeed", m_currentV);
 
-        JumpingAndLanding();
+        //JumpingAndLanding();
     }
 
     private void DirectUpdate()
@@ -195,27 +221,48 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             m_animator.SetFloat("MoveSpeed", direction.magnitude);
         }
 
-        JumpingAndLanding();
+        //JumpingAndLanding();
     }
 
-    private void JumpingAndLanding()
-    {
-        bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
+    // El siguiente era un metodo que permitia saltar pero solo una vez
+    //private void JumpingAndLanding()
+    //{
+        // Estas lineas del codigo original daban un Cooldown al salto y eso no permitia asignarle una fuerza
+        //bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
+        // jumpCooldownOver &&
 
-        if (jumpCooldownOver && m_isGrounded && m_jumpInput)
-        {
-            m_jumpTimeStamp = Time.time;
-            m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
-        }
+        // El siguiente if activa el salto
+        
 
-        if (!m_wasGrounded && m_isGrounded)
-        {
-            m_animator.SetTrigger("Land");
-        }
+        //El siguiente if es una manera de activar el salto
+        //if (m_isGrounded && Input.GetKey(KeyCode.Space) && _nJumpsValue > 0)
+        // {
+        //    m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+        //    _nJumpsValue++;
+        // }
 
-        if (!m_isGrounded && m_wasGrounded)
-        {
-            m_animator.SetTrigger("Jump");
-        }
-    }
+        // if (m_isGrounded && m_jumpInput)
+
+        //  {
+        //m_jumpTimeStamp = Time.time;
+        //    m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+        //     _nJumpsValue--;
+        // }
+
+        // if (!m_wasGrounded && m_isGrounded)
+        // {
+        //    m_animator.SetTrigger("Land");
+        // }
+
+
+        //if (!m_isGrounded && m_wasGrounded)
+        // {
+
+        //  m_animator.SetTrigger("Jump");
+        //_nJumpsValue--;
+        // }
+    //}
 }
+    
+
+
