@@ -18,6 +18,8 @@ public class Hearts : MonoBehaviour
         {
             vidas--;
 
+            GameManager.Instance.PerderVida();
+
             if (vidas <= 0)
             {
                 transform.position = puntoInicio;

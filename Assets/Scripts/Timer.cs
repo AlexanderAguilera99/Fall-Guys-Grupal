@@ -13,5 +13,4 @@ public class Timer : MonoBehaviour
         timer += Time.deltaTime;
         TextoTimer.text = "" + timer.ToString("f0");
     }
-
 }
