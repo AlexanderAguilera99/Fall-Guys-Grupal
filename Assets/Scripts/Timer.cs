@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
-        
+
         if (!created)
         {
             created = true;

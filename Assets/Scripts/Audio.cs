@@ -7,25 +7,16 @@ public class Audio : MonoBehaviour
 {
     private bool audioEnabled = true;
 
-    private static Audio instance;
-
-    void Awake()
+    private void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void ToggleAudio()
     {
         audioEnabled = !audioEnabled;
 
+        // Recorremos todas las escenas
         for (int i = 0; i < SceneManager.sceneCount; i++)
         {
             Scene scene = SceneManager.GetSceneAt(i);
@@ -35,14 +26,14 @@ public class Audio : MonoBehaviour
             foreach (GameObject obj in objectsInScene)
             {
                 AudioSource audioSource = obj.GetComponent<AudioSource>();
-
                 if (audioSource != null)
                 {
                     audioSource.enabled = audioEnabled;
+
+                    Debug.Log("Audio " + audioSource.clip.name + " in scene " + scene.name + " is now " + audioEnabled);
                 }
             }
         }
     }
 }
-
 
