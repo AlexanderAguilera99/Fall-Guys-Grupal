@@ -492,7 +492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -968,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 914254b9ca8157847a3ec0ff47ff375e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.08
+      value: 25.44
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 914254b9ca8157847a3ec0ff47ff375e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1004,6 +1004,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 914254b9ca8157847a3ec0ff47ff375e, type: 3}
+--- !u!1 &528112349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 914254b9ca8157847a3ec0ff47ff375e, type: 3}
+  m_PrefabInstance: {fileID: 528112348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &528112350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528112349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10dfcd5edae73eb4fb5360885a3de471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Nivel4_FallGuys
+--- !u!65 &528112354
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528112349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11116999, y: 0.07329939, z: 0.0060346695}
+  m_Center: {x: 0, y: 0, z: -0.000000005005859}
 --- !u!1 &579342322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1597,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949773439}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &949773441
 Camera:
   m_ObjectHideFlags: 0
@@ -1782,7 +1813,7 @@ AudioSource:
   m_Volume: 0.274
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -2169,7 +2200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340026113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0, z: 24.17}
+  m_LocalPosition: {x: -0.04, y: 0, z: 26.53}
   m_LocalScale: {x: 11.893985, y: 0.1575825, z: 3.5085626}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2201,7 +2232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8905847355334814650, guid: 8b1eec081a41a8745a2425c58f21355b, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905847356055191112, guid: 8b1eec081a41a8745a2425c58f21355b, type: 3}
       propertyPath: m_RootOrder

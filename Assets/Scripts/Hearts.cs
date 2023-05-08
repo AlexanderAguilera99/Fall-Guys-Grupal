@@ -22,10 +22,7 @@ public class Hearts : MonoBehaviour
 
             if (vidas <= 0)
             {
-                transform.position = puntoInicio;
-                vidas = 3;
-
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene("Nivel5_GameOver");
             }
             else
             {

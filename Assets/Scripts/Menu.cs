@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    // Se reusa mucho el código para cargar el nivel probablemente hay una mejor práctica para hacer esto
+    // Se reusa mucho el cï¿½digo para cargar el nivel probablemente hay una mejor prï¿½ctica para hacer esto
     public void StartGame()
     {
         SceneManager.LoadScene("Nivel1_FallGuys");

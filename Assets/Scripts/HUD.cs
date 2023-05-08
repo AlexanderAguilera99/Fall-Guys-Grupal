@@ -10,5 +10,4 @@ public class HUD : MonoBehaviour
     {
         Vidas[indice].SetActive(false);
     }
-  
 }
