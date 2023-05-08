@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Nivel0_FallGuys.unity
+    guid: aa864b857c7ac994caa8cb432b4149ad
+  - enabled: 1
     path: Assets/Scenes/Nivel1_FallGuys.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -14,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel3_FallGuys.unity
     guid: 5b7904f3721e4a54992301317b3934d0
+  - enabled: 1
+    path: Assets/Scenes/Nivel4_FallGuys.unity
+    guid: 2762a01523513c64fb3933387c9d2d89
   m_configObjects: {}
